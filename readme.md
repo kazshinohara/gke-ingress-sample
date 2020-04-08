@@ -60,6 +60,7 @@ $ vim sorry-page-deployment.yaml
 ```
 
 ドメイン名を実際に利用されるものに変更してください。
+またGKEのバージョンが 1.16.5-gke.1 以上をお使いの場合は、API version を v1beta2 に変更してください。
 ```sh
 $ vim certificate.yaml
 ```
