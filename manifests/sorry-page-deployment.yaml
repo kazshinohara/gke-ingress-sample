@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sorry-page
+spec:
+  selector:
+    matchLabels:
+      app: sorry-page
+  replicas: 2 
+  template:
+    metadata:
+      labels:
+        app: sorry-page
+    spec:
+      containers:
+      - name: sorry-page
+        image: asia.gcr.io/k8s-day/sorry-page:v1
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "200Mi"
+          requests:
+            cpu: "250m"
+            memory: "100Mi"
+        ports:
+        - containerPort: 8080
