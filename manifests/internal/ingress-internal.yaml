@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: hello-go-internal-ingress
+  annotations:
+    kubernetes.io/ingress.class: "gce-internal"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: hello-go-internal
+          servicePort: 80
+
